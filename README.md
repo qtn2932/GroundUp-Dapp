@@ -40,3 +40,7 @@ Then, copy the deployment address and paste it in to replace `DEPLOYED_CONTRACT_
 ```shell
 npx hardhat verify --network ropsten DEPLOYED_CONTRACT_ADDRESS "Hello, Hardhat!"
 ```
+
+# Project specific
+
+This is an in progress work. A masterchef contract is a contract for a dapp. This dapp allows users to deposit their crypto currency to earn passive income in term of an ERC-20 token named Qent. Qent has many use cases that will be develop along side this masterchef. Stay tuned. 
