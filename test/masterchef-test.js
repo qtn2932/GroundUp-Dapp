@@ -108,3 +108,23 @@ describe("Reward and harvest Masterchef", async function () {
     expect(await masterchef.harvest(0)).to.emit(masterchef, "Harvest");
   });
 });
+describe("Withdrawal Masterchef", async function () {
+  beforeEach(async function () {
+    await masterchef.addPool(100, qentToken.address, 1000, false);
+    await qentToken.approve(masterchef.address, ethers.utils.parseEther("100"));
+    await masterchef.deposit(0, ethers.utils.parseEther("50"));
+  });
+  it("should allow withdrawal of fund", async function () {
+    await masterchef.withdraw(0, ethers.utils.parseEther("45"));
+    expect(await qentToken.balanceOf(owner.address)).to.be.above(
+      ethers.utils.parseEther("50")
+    );
+  });
+
+  it("should emit withdraw event", async function () {
+    expect(await masterchef.withdraw(0, ethers.utils.parseEther("45"))).to.emit(
+      masterchef,
+      "Withdraw"
+    );
+  });
+});
