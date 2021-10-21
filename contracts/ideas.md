@@ -23,3 +23,7 @@
         -2nd receive 20%
         
         -3rd receive 10%
+
+**_Profit sharing_**:
+
+    create a set number 
