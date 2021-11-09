@@ -31,7 +31,6 @@ contract MasterChef is Ownable, ReentrancyGuard {
 //            This amount is calculated using the following formula:
 //                pending reward = ( user pool percent * total qent distribute to pool) - reward debt
 
-// todo: add aave smart contract interaction
 //    when deposit to a pool, amount is send to the corresponding aave pool
 //    interest will be use to buy back qentry
     QEntry public qentry;
@@ -48,6 +47,7 @@ contract MasterChef is Ownable, ReentrancyGuard {
     address public usdcQentryLP = address(0x0); // this is needed to keep the price of qent stable
     address public burnaddr;
     address public nftaddr = address(0x0);// nft system if there is a need in the future
+    address public profitShareAddr = address(0x0);
     uint256 public QentryPerBlock = 5 ether;
     uint256 public maxEmissionRate = 10 ether;
     uint256 public constant BONUS_MULTIPLIER= 1;
